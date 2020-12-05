@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>PianoBeat</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="left-part">
+        <h5>CONTROLS</h5>
+        <button class="play">Play</button>
+        <div class="tempo">
+          <input
+            type="range"
+            class="tempo-slider"
+            max="300" 
+            min="20"
+            value="150"/>
+          <p>Tempo: <span class="tempo-nr">150</span></p>
+        </div>
+      </div>
+      <div class="bottom-part">
+        <img src="2_preview_rev_1.png" alt="logo" width="180" height="120">
+      </div>
+      <div class="sequencer">
+        <h5>GRID</h5>
+        <div class="kick-track">
+          <div class="controls">
+            <select name="kick-select" id="kick-select">
+              <option value="./sounds/kick-808.wav">Kick</option>
+              <option value="./sounds/kick-classic.wav">Classic Kick</option>
+              <option value="./sounds/kick-softy.wav">Soft Kick</option>
+            </select>
+            <button data-track="0" class="mute kick-volume">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+          </div>
+          <div class="kick">
+            <div class="pad kick-pad b0"></div>
+            <div class="pad kick-pad b1"></div>
+            <div class="pad kick-pad b2"></div>
+            <div class="pad kick-pad b3"></div>
+            <div class="pad kick-pad b4"></div>
+            <div class="pad kick-pad b5"></div>
+            <div class="pad kick-pad b6"></div>
+            <div class="pad kick-pad b7"></div>
+          </div>
+        </div>
+        <div class="snare-track">
+          <div class="controls">
+            <select name="snare-select" id="snare-select">
+              <option value="./sounds/snare-808.wav">Snare</option>
+              <option value="./sounds/snare-acoustic01.wav">Classic Snare</option>
+              <option value="./sounds/snare-vinyl02.wav">Vinyl Snare</option>
+            </select>
+            <button data-track="1" class="mute snare-volume">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+          </div>
+          <div class="snare">
+            <div class="pad snare-pad b0"></div>
+            <div class="pad snare-pad b1"></div>
+            <div class="pad snare-pad b2"></div>
+            <div class="pad snare-pad b3"></div>
+            <div class="pad snare-pad b4"></div>
+            <div class="pad snare-pad b5"></div>
+            <div class="pad snare-pad b6"></div>
+            <div class="pad snare-pad b7"></div>
+          </div>
+        </div>
+        <div class="hihat-track">
+          <div class="controls">
+            <select name="hihat-select" id="hihat-select">
+              <option value="./sounds/hihat-808.wav">Hihat</option>
+              <option value="./sounds/hihat-acoustic01.wav">Acoustic Hihat</option>
+            </select>
+            <button data-track="2" class="mute hihat-volume">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+          </div>
+          <div class="hihat">
+            <div class="pad hihat-pad b0"></div>
+            <div class="pad hihat-pad b1"></div>
+            <div class="pad hihat-pad b2"></div>
+            <div class="pad hihat-pad b3"></div>
+            <div class="pad hihat-pad b4"></div>
+            <div class="pad hihat-pad b5"></div>
+            <div class="pad hihat-pad b6"></div>
+            <div class="pad hihat-pad b7"></div>
+          </div>
+        </div>
+        <div class="clap-track">
+          <div class="controls">
+            <select name="clap-select" id="clap-select">
+              <option value="./sounds/clap-808.wav">Clap</option>
+              <option value="./sounds/clap-analog.wav">Analog Clap</option>
+              <option value="./sounds/clap-slapper.wav">Slap Clap</option>
+              <option value="./sounds/clap-tape.wav">Tape Clap</option>
+            </select>
+            <button data-track="3" class="mute clap-volume">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+          </div>
+          <div class="clap">
+            <div class="pad clap-pad b0"></div>
+            <div class="pad clap-pad b1"></div>
+            <div class="pad clap-pad b2"></div>
+            <div class="pad clap-pad b3"></div>
+            <div class="pad clap-pad b4"></div>
+            <div class="pad clap-pad b5"></div>
+            <div class="pad clap-pad b6"></div>
+            <div class="pad clap-pad b7"></div>
+          </div>
+        </div>
+      </div>
+      <div class="piano">
+        <div data-note="C" class="key white">C</div>
+        <div data-note="Db" class="key black">Db</div>
+        <div data-note="D" class="key white">D</div>
+        <div data-note="Eb" class="key black">Eb</div>
+        <div data-note="E" class="key white">E</div>
+        <div data-note="F" class="key white">F</div>
+        <div data-note="Gb" class="key black">Gb</div>
+        <div data-note="G" class="key white">G</div>
+        <div data-note="Ab" class="key black">Ab</div>
+        <div data-note="A" class="key white">A</div>
+        <div data-note="Bb" class="key black">Bb</div>
+        <div data-note="B" class="key white">B</div>
+      </div>
+  </main>
+
+    <audio class="kick-sound" src="./sounds/kick-classic.wav"></audio>
+    <audio class="snare-sound" src="./sounds/snare-acoustic01.wav"></audio>
+    <audio class="hihat-sound" src="./sounds/hihat-acoustic01.wav"></audio>
+    <audio class="clap-sound" src="./sounds/clap-808.wav"></audio>
+    <audio id="C" src="notes/C.mp3"></audio>
+    <audio id="Db" src="notes/Db.mp3"></audio>
+    <audio id="D" src="notes/D.mp3"></audio>
+    <audio id="Eb" src="notes/Eb.mp3"></audio>
+    <audio id="E" src="notes/E.mp3"></audio>
+    <audio id="F" src="notes/F.mp3"></audio>
+    <audio id="Gb" src="notes/Gb.mp3"></audio>
+    <audio id="G" src="notes/G.mp3"></audio>
+    <audio id="Ab" src="notes/Ab.mp3"></audio>
+    <audio id="A" src="notes/A.mp3"></audio>
+    <audio id="Bb" src="notes/Bb.mp3"></audio>
+    <audio id="B" src="notes/B.mp3"></audio>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+      integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
